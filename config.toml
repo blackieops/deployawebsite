@@ -1,0 +1,23 @@
+baseurl = "https://deploy.blackieops.com/"
+title = "So You Want to Deploy a Web Site..."
+languageCode = "en-us"
+theme = "hugo-material-docs"
+
+[params]
+	author = "Alex Blackie"
+
+[[menu.main]]
+	name = "Introduction"
+	url = "/"
+	weight = 0
+
+[[menu.main]]
+	name = "Static Sites"
+	url = "/static-sites"
+	weight = 0
+
+[blackfriday]
+	smartypants	= true
+	fractions = true
+	smartDashes = true
+	plainIDAnchors = true
