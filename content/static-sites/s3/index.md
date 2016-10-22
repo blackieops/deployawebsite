@@ -357,8 +357,20 @@ Click "Create Record Set".
 * **Alias Target**: click in this field and wait for it to load (it will take
   several seconds), then choose your CloudFront Distribution.
 
-Click "Save Record Set". In many cases, these changes are nearly immediate, but
-sometimes it may take a few minutes to take effect.
+Click "Save Record Set". Now our site will be available over IPv4, but if you
+remember, CloudFront supports IPv6, so we need to add a record for that as well.
+
+Click "Create Record Set".
+
+* **Name**: `www`
+* **Type**: "AAAA &mdash; IPv4 Address"
+* **Alias**: Yes
+* **Alias Target**: click in this field choose your CloudFront Distribution.
+
+Click "Save Record Set".
+
+In many cases, these changes are nearly immediate, but sometimes it may take a
+few minutes to take effect.
 
 Once the DNS propogates, you should be able to visit `https://www.example.com`
 (where `example.com` is your domain) and you should be greeted with your static
