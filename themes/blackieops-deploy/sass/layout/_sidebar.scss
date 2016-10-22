@@ -1,5 +1,6 @@
 .site-sidebar {
 	@include span(3 first);
+	margin-top: 6em;
 }
 
 #TableOfContents {
