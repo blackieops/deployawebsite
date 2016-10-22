@@ -1,0 +1,18 @@
+.index-nav {
+	@include span(5 first);
+	border-radius: 1em;
+	background: $color-background-header;
+	color: $color-text-header;
+}
+
+.index-intro {
+	@include span(7 last);
+
+	h2 {
+		margin-top: 0;
+	}
+
+	p {
+		line-height: 1.5em;
+	}
+}

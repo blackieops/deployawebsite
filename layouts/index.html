@@ -1,20 +1,49 @@
 {{ partial "header.html" . }}
-<ul>
-	{{ $currentNode := . }}
-	{{ range .Site.Menus.main }}
-		{{ if .HasChildren }}
-			<li class="sub-menu">
-				<span>{{ .Name }}</span>
-				<ul class="sub">
-					{{ range .Children }}
-					<li{{if $currentNode.IsMenuCurrent "main" . }} class="active"{{end}}><a href="{{.URL}}">{{ .Name }}</a> </li>
-					{{ end }}
-				</ul>
-		{{else}}
-			<li>
-				<a class="" href="{{.URL}}">{{ .Name }}</a>
+<div class="index-nav">
+	<ul>
+		{{ $currentNode := . }}
+		{{ range .Site.Menus.main }}
+			{{ if .HasChildren }}
+				<li class="sub-menu">
+					<span>{{ .Name }}</span>
+					<ul class="sub">
+						{{ range .Children }}
+						<li{{if $currentNode.IsMenuCurrent "main" . }} class="active"{{end}}><a href="{{.URL}}">{{ .Name }}</a> </li>
+						{{ end }}
+					</ul>
+			{{else}}
+				<li>
+					<a class="" href="{{.URL}}">{{ .Name }}</a>
+			{{end}}
+				</li>
 		{{end}}
-			</li>
-	{{end}}
-</ul>
+	</ul>
+</div>
+
+<div class="index-intro">
+	<h2>So you want to deploy a web site&hellip;</h2>
+
+	<p>
+		The Internet has changed from what it once was. Previously, to get your
+		Web Site On-Line, you just needed to FTP it to a computer with a fancy
+		internet connection, or more recently pay a few dollars a month to a
+		really sketchy company and FTP files around.
+	</p>
+
+	<p>
+		While you could still do both of those things, a lot has changed, and
+		you may find yourself dealing with bandwidth and load issues, or simply
+		overwhelmed by the amount of work involved. You may be tempted to use a
+		PaaS or magic SaaS product that promises infinite gain for no work. "No
+		servers required!"
+	</p>
+
+	<p>
+		The goal of the guides on this site is to instruct and educate those
+		who don't have a background in systems administration on easy and
+		powerful ways to host a web site on the Internet using modern security
+		and scalability practices. It may not be as hard as you think, and in
+		many cases you might not need servers at all.
+	</p>
+</div>
 {{ partial "footer.html" . }}
