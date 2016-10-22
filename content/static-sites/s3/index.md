@@ -270,11 +270,7 @@ With that said, let's get started.
    verification email.
 
 Once confirmed, you should now have a valid SSL certificate for use with AWS
-services! Let's add it to our CloudFront distribution.
-
-1. Navigate to "CloudFront" from the Services menu.
-2. Select your distribution, and hit "Edit" under the "General" tab.
-5. Hit "Yes, Edit".
+services! This will become useful in the next section.
 
 ## Making it fast
 
@@ -298,25 +294,15 @@ Head up to that now-familiar "Services" menu and hunt for "CloudFront".
 Hit "Create Distribution". We're deploying a website, so under "Web" click "Get
 Started".
 
+Note: if we don't mention a setting here, just leave it at its default value.
+
 * **Origin Settings**
-	* **Origin Domain Name** should autocomplete. Select your S3 bucket.
-	* **Origin Path** can be left blank
-	* **Origin ID** can be left at its default
-	* **Restrict bucket access**: No
-	* **Origin Custom Headers** can be left blank
+  * **Origin Domain Name**: DO NOT select the S3 bucket from the autocomplete,
+    instead paste in the Endpoint URL from the Static Website Hosting section
+    we noted when configuring the bucket.
 * **Default Cache Behaviour**
   * **Viewer Protocol Policy**: Redirect HTTP to HTTPS
-  * **Allowed HTTP Methods**: GET, HEAD
-  * **Forward Headers**: None
-  * **Object Caching**: Use origin cache headers
-  * **Forward Cookies**: None
-  * **Query string forwarding**: None
-  * **Smooth streaming**: No
-  * **Restrict viewer access**: No
-  * **Compress objects automatically**: No
 * **Distribution Settings**
-  * **Price Class**: Use All Edge Locations
-  * **AWS WAF**: No
   * **Alternate domain names** should contain the domains that this bucket
 	should be associated with. Generally, this will just be `www.example.com`,
 	where `example.com` is the domain you registered previously.
@@ -325,16 +311,10 @@ Started".
   * **Custom SSL Client Support**: ENSURE this is set to "SNI"! If this option
 	is changed, you will be charged $600USD per month for dedicated servers.
   * **Supported HTTP versions**: HTTP/2, HTTP/1.1, HTTP/1.0
-  * **Default root object** can be left blank
   * **Enable IPv6**: yes! Finally, we've reached 1999.
-  * **Distribution State**: Enabled
-
-Phew.
 
 Now click "Create Distribution" and go get a coffee and probably lunch as well.
 CloudFront can take quite a while to set itself up (up to an hour, sometimes).
-
-While CloudFront is doing its thing, we can set up our domain.
 
 ## Adding DNS Records
 
@@ -363,7 +343,7 @@ remember, CloudFront supports IPv6, so we need to add a record for that as well.
 Click "Create Record Set".
 
 * **Name**: `www`
-* **Type**: "AAAA &mdash; IPv4 Address"
+* **Type**: "AAAA &mdash; IPv6 Address"
 * **Alias**: Yes
 * **Alias Target**: click in this field choose your CloudFront Distribution.
 
