@@ -3,6 +3,10 @@
 	margin-bottom: 2em;
 	background-color: $color-background-header;
 	color: $color-text-inverted;
+}
+
+.site-header-logo {
+	@include span(5 first);
 
 	h1 {
 		margin: 0;
@@ -29,5 +33,29 @@
 				opacity: 0.75;
 			}
 		}
+	}
+}
+
+.site-header-nav {
+	@include span(7 last);
+	text-align: right;
+	margin-top: 2em;
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	li {
+		display: inline-block;
+	}
+
+	a {
+		display: inline-block;
+		padding: 10px 20px;
+		background: rgba(white, 0.05);
+		color: $color-text-inverted;
+		text-decoration: none;
 	}
 }

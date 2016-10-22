@@ -14,33 +14,24 @@
 </head>
 <body>
 	<header class="site-header"><div class="container">
-		<h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
-		<div class="presented">
-			Presented by
-			<a href="https://www.blackieops.com/">
-				<img src="{{.Site.BaseURL}}/images/logo.svg" alt="BlackieOps" height="32" valign="middle">
-			</a>
+		<div class="site-header-logo">
+			<h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
+			<div class="presented">
+				Presented by
+				<a href="https://www.blackieops.com/">
+					<img src="{{.Site.BaseURL}}/images/logo.svg" alt="BlackieOps" height="32" valign="middle">
+				</a>
+			</div>
 		</div>
+
+		<nav class="site-header-nav">
+			<ul>
+				<li><a href="/">Article Directory</a></li>
+			</ul>
+		</nav>
 	</div></header>
 
 	<div class="container">
 		<nav class="site-sidebar">
-			<ul>
-				{{ $currentNode := . }}
-				{{ range .Site.Menus.main }}
-					{{ if .HasChildren }}
-						<li class="sub-menu">
-							<span>{{ .Name }}</span>
-							<ul class="sub">
-								{{ range .Children }}
-								<li{{if $currentNode.IsMenuCurrent "main" . }} class="active"{{end}}><a href="{{.URL}}">{{ .Name }}</a> </li>
-								{{ end }}
-							</ul>
-					{{else}}
-						<li>
-							<a class="" href="{{.URL}}">{{ .Name }}</a>
-					{{end}}
-						</li>
-				{{end}}
-			</ul>
+			{{ .TableOfContents }}
 		</nav>

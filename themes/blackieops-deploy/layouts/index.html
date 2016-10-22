@@ -1,0 +1,20 @@
+{{ partial "header.html" . }}
+<ul>
+	{{ $currentNode := . }}
+	{{ range .Site.Menus.main }}
+		{{ if .HasChildren }}
+			<li class="sub-menu">
+				<span>{{ .Name }}</span>
+				<ul class="sub">
+					{{ range .Children }}
+					<li{{if $currentNode.IsMenuCurrent "main" . }} class="active"{{end}}><a href="{{.URL}}">{{ .Name }}</a> </li>
+					{{ end }}
+				</ul>
+		{{else}}
+			<li>
+				<a class="" href="{{.URL}}">{{ .Name }}</a>
+		{{end}}
+			</li>
+	{{end}}
+</ul>
+{{ partial "footer.html" . }}
