@@ -1,4 +1,4 @@
-baseurl = "https://deployawebsite.com/"
+baseurl = "https://www.deployawebsite.com/"
 title = "Deploy a Web Site"
 languageCode = "en-us"
 theme = "blackieops-deploy"
