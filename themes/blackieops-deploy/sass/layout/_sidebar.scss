@@ -1,3 +1,45 @@
 .site-sidebar {
 	@include span(4 first);
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		a, li::before {
+			padding: 0.25em 0;
+		}
+
+		li::before {
+			content: "-";
+			float: left;
+			padding-right: 1em;
+			color: $color-text;
+		}
+
+		&.sub {
+			margin-left: 1em;
+			padding: 0.5em 0;
+
+			li::before {
+				color: $color-text-inverted;
+			}
+		}
+	}
+
+	a {
+		display: block;
+		text-decoration: none;
+	}
+
+	.active a {
+		color: $color-highlight-inverted;
+	}
+
+	.sub-menu::before {
+		content: "\25BC";
+		padding: 0 1em 0 0;
+		font-size: 0.75em;
+		line-height: 1.5em;
+	}
 }

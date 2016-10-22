@@ -1,5 +1,4 @@
 .site-content {
 	@include span(8 last);
-	@include padding(2em null);
 	line-height: 1.6em;
 }

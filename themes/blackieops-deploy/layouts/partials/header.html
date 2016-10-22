@@ -26,8 +26,21 @@
 	<div class="container">
 		<nav class="site-sidebar">
 			<ul>
+				{{ $currentNode := . }}
 				{{ range .Site.Menus.main }}
-				<li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
-				{{ end }}
+					{{ if .HasChildren }}
+						<li class="sub-menu">
+							<span>{{ .Name }}</span>
+							<ul class="sub">
+								{{ range .Children }}
+								<li{{if $currentNode.IsMenuCurrent "main" . }} class="active"{{end}}><a href="{{.URL}}">{{ .Name }}</a> </li>
+								{{ end }}
+							</ul>
+					{{else}}
+						<li>
+							<a class="" href="{{.URL}}">{{ .Name }}</a>
+					{{end}}
+						</li>
+				{{end}}
 			</ul>
 		</nav>
