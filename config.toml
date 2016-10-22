@@ -1,7 +1,7 @@
 baseurl = "https://deploy.blackieops.com/"
 title = "So You Want to Deploy a Web Site..."
 languageCode = "en-us"
-theme = "hugo-material-docs"
+theme = "blackieops-deploy"
 
 [params]
 	author = "Alex Blackie"
