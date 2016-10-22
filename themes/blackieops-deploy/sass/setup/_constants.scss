@@ -19,5 +19,7 @@ $color-highlight: #2185C5;
 $color-highlight-inverted: invert($color-highlight);
 
 $color-background: #FAFAFA;
-$color-background-header: #3E454C;
+$color-background-header: #EFEFEF;
+$color-text-header: tint($color-text, 15%);
+$color-background-footer: $color-background-header;
 $color-background-code: #EFEFEF;

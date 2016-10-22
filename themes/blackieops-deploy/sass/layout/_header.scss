@@ -1,8 +1,9 @@
 .site-header {
 	padding: 3em;
 	margin-bottom: 2em;
-	background-color: $color-background-header;
-	color: $color-text-inverted;
+	background-color: $color-background-footer;
+	border-bottom: 5px solid $color-highlight;
+	color: $color-text-header;
 }
 
 .site-header-logo {
@@ -17,20 +18,7 @@
 			color: inherit;
 
 			&:hover {
-				color: white;
-			}
-		}
-	}
-
-	.presented {
-		margin-top: 1em;
-
-		img {
-			@include transition(all 0.3s ease);
-
-			&:not(:hover) {
-				@include filter(grayscale(100%));
-				opacity: 0.75;
+				color: $color-text-header;
 			}
 		}
 	}
@@ -39,7 +27,7 @@
 .site-header-nav {
 	@include span(7 last);
 	text-align: right;
-	margin-top: 2em;
+	margin-top: 0.5em;
 
 	ul {
 		list-style: none;
@@ -54,8 +42,13 @@
 	a {
 		display: inline-block;
 		padding: 10px 20px;
-		background: rgba(white, 0.05);
-		color: $color-text-inverted;
+		background-color: tint($color-background-header, 50%);
+		color: $color-text-header;
 		text-decoration: none;
+
+		&:hover {
+			text-decoration: none;
+			background-color: tint($color-background-header, 100%);
+		}
 	}
 }
