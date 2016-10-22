@@ -1,5 +1,5 @@
-baseurl = "https://deploy.blackieops.com/"
-title = "So You Want to Deploy a Web Site..."
+baseurl = "https://deployawebsite.com/"
+title = "Deploy a Web Site"
 languageCode = "en-us"
 theme = "blackieops-deploy"
 
