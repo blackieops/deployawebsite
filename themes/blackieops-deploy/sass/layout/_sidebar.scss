@@ -1,7 +1,16 @@
 .site-sidebar {
 	@include span(3 first);
+}
 
-	ul {
+#TableOfContents {
+	// Hugo nests the TOC under an extra `ul` for some reason?
+	> ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	> ul ul {
 		margin: 0;
 		padding: 0;
 		list-style: none;
@@ -17,7 +26,7 @@
 			color: $color-text;
 		}
 
-		&.sub {
+		li > ul {
 			margin-left: 1em;
 			padding: 0.5em 0;
 
