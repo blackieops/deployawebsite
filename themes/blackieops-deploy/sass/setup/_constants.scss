@@ -2,6 +2,22 @@
 $susy: (columns: 12);
 
 // Fonts
-$font-family-primary: "Noto Sans", sans-serif;
+$font-family-primary: "Fira Sans", serif;
+$font-family-secondary: "Open Sans Condensed", sans-serif;
+$font-family-monospace: "Inconsolata", monospace;
+
+$font-size-base: 16px;
 
 // Box-model
+
+
+// Colors
+$color-text: #323232;
+$color-text-light: lighten($color-text, 25%);
+$color-text-inverted: invert($color-text);
+$color-highlight: #2185C5;
+$color-highlight-inverted: invert($color-highlight);
+
+$color-background: #FAFAFA;
+$color-background-header: #3E454C;
+$color-background-code: #EFEFEF;

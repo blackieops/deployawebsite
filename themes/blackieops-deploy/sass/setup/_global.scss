@@ -1,4 +1,64 @@
 body {
-	font-family: "Noto Sans", sans-serif;
-	font-size: 20px;
+	font-family: $font-family-primary;
+	font-size: $font-size-base;
+	color: $color-text;
+	background-color: $color-background;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 1.5em 0 0.5em 0;
+	font-family: $font-family-secondary;
+	line-height: 1.1em;
+}
+
+h1, h2 {
+	letter-spacing: -0.03em;
+}
+
+h3, h4 {
+	margin: 2em 0 0.5em 0;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+h2 {
+	font-size: 2.5em;
+}
+
+h1 {
+	font-size: 3.5em;
+	margin-top: 0;
+}
+
+pre, code {
+	font-family: $font-family-monospace;
+	background-color: $color-background-code;
+}
+
+a {
+	color: $color-highlight;
+
+	&:hover {
+		color: $color-highlight-inverted;
+	}
+}
+
+code {
+	padding: 1px 3px;
+}
+
+pre {
+	overflow: auto;
+	max-width: 100%;
+	max-height: 500px;
+}
+
+pre > code {
+	display: block;
+	padding: 2em;
+}
+
+ul li,
+ol li {
+	margin-bottom: 0.5em;
 }
