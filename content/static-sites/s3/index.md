@@ -25,9 +25,9 @@ This is a very popular option for a few key reasons.
   to the cost of hosting the same site on servers yourself.
 * **Lower risk** &mdash; Since there are no servers to maintain, the
   responsibility of security and stability are offset to Amazon.
-* **Easiness** &mdash; With no servers to maintain, you can "set-and-forget".
-  You don't need to install updates on a small fleet of Linux machines just to
-  run your static site.
+* **Ease** &mdash; With no servers to maintain, you can "set-and-forget". You
+  don't need to install updates on a small fleet of Linux machines just to run
+  your static site.
 
 ## Why Would You Not Do This
 
