@@ -39,7 +39,7 @@ While this option has may positives, it also has some downsides.
   any programming languages or pre-processors without completely re-platforming
   to "real" servers or something like AWS Lambda.
 * **Confusing** &mdash; There are a lot of moving parts to this setup. AWS isn't
-  the simplest cloud service, and their UX is generally quite horrible.
+  the simplest cloud service, and their UX often leaves a lot to be desired.
   Understanding each part of this deployment and how it works could be a
   difficult task to someone unfamiliar with AWS.
 
@@ -67,34 +67,16 @@ to pick something generic like `website`, you'll likely need to make it
 specific, like `alex-super-sweet-site`. This can be the domain name of your site
 if you wish, but for the purposes guide it does not matter what it is called.
 
+You don't need to select a region. Click "Create".
+
 In the "Properties" pane of the S3 console, expand the "Static Website Hosting"
-panel. Fill out the "Index document" and "Error document" accordingly (eg.,
-`index.html` and `5xx.html`, respectively).
-
-While we're in here, expand "Permissions" and click "Add bucket policy". Enter a
-policy similar to below:
-
-```
-{
-	"Version": "2008-10-17",
-	"Statement": [
-	{
-		"Sid": "AllowPublicRead",
-		"Effect": "Allow",
-		"Principal": {
-			"AWS": "*"
-		},
-		"Action": "s3:GetObject",
-		"Resource": "arn:aws:s3:::my-bucket-name/*"
-	}
-	]
-}
-```
-
-Of course, replacing `my-bucket-name` with the name of the bucket. Hit "Save".
+panel and click "Enable Static Website Hosting". Fill out the "Index document"
+and "Error document" accordingly (eg., `index.html` and `5xx.html`,
+respectively). Click "Save".
 
 We're now done configuring the bucket itself. Before we leave, take note of the
-"Endpoint" under the "Static Website Hosting" section. We will need this later.
+"Endpoint" under the "Static Website Hosting" section (it should resemble
+`your-bucket-name.s3-website-us-east-1.amazonaws.com`). We will need this later.
 
 ## Creating a User
 
@@ -118,6 +100,12 @@ way to "IAM".
 
 Now click on the user in the list, and head to the "Permissions" tab. By
 default, an IAM user has no permissions at all.
+
+We'll need to give this new user permissions to our S3 bucket so it can upload
+files. We don't, however, want it to have more permissions than it needs. This
+ensures that in the event the keys get compromised, they attacker won't be able
+to do anything except mess with the one bucket's files (i.e., they can't spin up
+new servers, log into the web console, etc).
 
 We're going to create an inline custom policy for this user, as that is the
 simplest way to achieve what we want.
@@ -171,6 +159,7 @@ similarly-named package.
 
 Create a folder in your home directory called `.aws`, and create a file inside
 called `credentials`. This is an INI-style file that defines our "profiles".
+Fill it out with the credentials for the user we created earlier:
 
 ```
 [default]
@@ -186,6 +175,14 @@ use the `aws` command to sync to S3:
 
 ```
 $ aws s3 sync . s3://my-bucket-name
+```
+
+If you didn't name your profile `[default]` in the previous step, you'll need to
+tell the AWS CLI which profile you want to use. For example, if you named it
+`[mysite]`:
+
+```
+$ aws --profile mysite s3 sync . s3://my-bucket-name
 ```
 
 A breakdown of what that command does:
