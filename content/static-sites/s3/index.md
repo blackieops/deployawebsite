@@ -74,6 +74,33 @@ panel and click "Enable Static Website Hosting". Fill out the "Index document"
 and "Error document" accordingly (eg., `index.html` and `5xx.html`,
 respectively). Click "Save".
 
+We'll need to instruct AWS to allow public access to our website files, since
+by default they can only be read by IAM users with access to that bucket. To
+solve this, we can use a Bucket Policy to change the default permissions on
+objects we upload.
+
+Expand "Permissions" and click "Add bucket policy". Enter a policy similar to
+below:
+
+```
+{
+       "Version": "2008-10-17",
+       "Statement": [
+       {
+               "Sid": "AllowPublicRead",
+               "Effect": "Allow",
+               "Principal": {
+                       "AWS": "*"
+               },
+               "Action": "s3:GetObject",
+               "Resource": "arn:aws:s3:::my-bucket-name/*"
+       }
+       ]
+}
+```
+
+Click "Save" and the policy will be verified and applied.
+
 We're now done configuring the bucket itself. Before we leave, take note of the
 "Endpoint" under the "Static Website Hosting" section (it should resemble
 `your-bucket-name.s3-website-us-east-1.amazonaws.com`). We will need this later.
