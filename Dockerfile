@@ -8,7 +8,8 @@ ENV LC_ALL en_US.utf8
 ENV HOME /tmp
 
 RUN yum makecache fast && \
-	yum install -y make gcc git && \
+	yum install -y epel-release && \
+	yum install -y make gcc git awscli && \
 	yum install -y https://repo.blackieops.com/centos/7/ruby-2.4.1-1.el7.centos.x86_64.rpm && \
 	yum clean all && rm -fr /var/cache/yum
 
