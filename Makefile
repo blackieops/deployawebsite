@@ -23,4 +23,4 @@ clean:
 	rm -fr dist/* vendor/bundle .sass-cache
 
 
-.PHONY: all build clean bundle
+.PHONY: all build clean rubygems
