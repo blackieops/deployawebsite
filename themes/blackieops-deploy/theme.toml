@@ -1,7 +1,0 @@
-name = "BlackieOps Deploy"
-description = "The theme for this site."
-min_version = 0.17
-
-[author]
-  name = "BlackieOps"
-  homepage = "https://www.blackieops.com/"
