@@ -1,9 +1,16 @@
 .site-footer {
-	display: flex;
-	justify-content: space-between;
 	padding: $padding-header 0;
 	border-top: 2px solid $color-border;
 	color: $color-text-footer;
+
+	@media screen and (min-width: $break-tiny + 1px) {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	@media screen and (max-width: $break-tiny) {
+		padding: $padding-header $padding-content-mobile;
+	}
 
 	.legal {
 		line-height: 1.5em;
@@ -11,6 +18,10 @@
 
 	.credits {
 		font-size: 0.75em;
+
+		@media screen and (max-width: $break-tiny) {
+			margin-top: 2rem;
+		}
 	}
 
 	a {

@@ -2,6 +2,10 @@
 	@include clearfix;
 	padding: 0 $padding-content;
 
+	@media screen and (max-width: $break-tiny) {
+		padding: 0 $padding-content-mobile;
+	}
+
 	strong {
 		font-weight: bold;
 		font-size: 1.1em;

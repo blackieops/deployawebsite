@@ -1,6 +1,10 @@
 body {
 	font-family: "PT Sans", sans-serif;
 	font-size: $font-size-base;
+
+	@media screen and (max-width: $break-tiny) {
+		font-size: $font-size-base-mobile;
+	}
 }
 
 hr {
@@ -15,8 +19,19 @@ code, pre {
 	font-family: "Source Code Pro", monospace;
 	background-color: #fdfaf0;
 }
+
+code {
+	font-size: 0.85em;
+	padding: 1px 3px;
+}
+
 pre {
 	padding: 1em;
-	font-size: 1rem;
-	line-height: 1.75em;
+	line-height: 1.25em;
+	overflow: scroll;
+	max-height: 500px;
+
+	@media screen and (max-width: $break-tiny) {
+		margin: 0 (-$padding-content-mobile);
+	}
 }
