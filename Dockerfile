@@ -1,8 +1,8 @@
 FROM centos:7
 
-ENV LANG C.UTF-8
-ENV LANGUAGE C.UTF-8
-ENV LC_ALL C.UTF-8
+ENV LANG en_US.utf8
+ENV LANGUAGE en_US.utf8
+ENV LC_ALL en_US.utf8
 
 # Set HOME so bundler shuts up
 ENV HOME /tmp
@@ -19,3 +19,4 @@ RUN git clone https://github.com/nuex/zodiac.git /tmp/zodiac && \
 
 # Jenkins sets the UID but some things breaks if the user isn't present in passwd
 RUN useradd -u995 jenkins
+
