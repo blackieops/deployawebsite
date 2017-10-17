@@ -17,7 +17,7 @@ pipeline {
 			}
 
 			steps {
-				sh "aws s3 sync public/ s3://www.deployawebsite.com/"
+				sh "aws s3 sync --delete dist/ s3://www.deployawebsite.com/"
 			}
 		}
 	}
