@@ -1,0 +1,22 @@
+body {
+	font-family: "PT Sans", sans-serif;
+	font-size: $font-size-base;
+}
+
+hr {
+	outline: 0;
+	height: 2px;
+	margin: 2rem 0;
+	border: none;
+	background: $color-border;
+}
+
+code, pre {
+	font-family: "Source Code Pro", monospace;
+	background-color: #fdfaf0;
+}
+pre {
+	padding: 1em;
+	font-size: 1rem;
+	line-height: 1.75em;
+}

@@ -1,0 +1,5 @@
+.container {
+	@include clearfix;
+	max-width: $width-site;
+	margin: auto;
+}

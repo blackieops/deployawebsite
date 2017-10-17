@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="/assets/site.css" type="text/css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:700,400|Source+Code+Pro:400" type="text/css">
+		<title>{{site_title}} {{article_title}}</title>
+	</head>
+	<body>
+		<div class="container">
+			<header class="site-header">
+				<h1><a href="/">{{site_title}}</a></h1>
+			</header>
+
+			<article class="site-content">
+				<h1 class="site-content-title">{{page_title}}</h1>
+				{{{yield}}}
+			</article>
+
+			<footer class="site-footer">
+				<div class="legal">
+					<p>The content is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> license.</p>
+					<p><a href="https://bitbucket.org/blackieops/deployawebsite">The code</a> is under the <a href="https://bitbucket.org/blackieops/deployawebsite/src/master/LICENSE">BSD-3</a> license. Patches welcome!</p>
+				</div>
+
+				<div class="credits">
+					Presented by:<br>
+					<a href="https://www.blackieops.com/"><img src="/assets/images/blackieops.svg" alt="BlackieOps" width="100"></a>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>

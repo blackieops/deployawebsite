@@ -1,0 +1,17 @@
+$font-size-base: 18px;
+
+$width-site: 820px;
+
+$padding-header: 1rem;
+$padding-content: 3rem;
+
+$palette-black: #252525;
+$palette-grey: #888;
+$palette-grey-light: #eee;
+
+$color-border: $palette-grey-light;
+$color-highlight: orange;
+$color-text: $palette-black;
+$color-text-footer: lighten($color-text, 50%);
+
+$color-background-code: $palette-grey-light;

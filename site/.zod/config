@@ -1,0 +1,5 @@
+[parse]
+html
+
+[parse_convert]
+md,markdown bundle exec ruby bin/markdown.rb

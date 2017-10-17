@@ -1,0 +1,34 @@
+.site-footer {
+	display: flex;
+	justify-content: space-between;
+	padding: $padding-header 0;
+	border-top: 2px solid $color-border;
+	color: $color-text-footer;
+
+	.legal {
+		line-height: 1.5em;
+	}
+
+	.credits {
+		font-size: 0.75em;
+	}
+
+	a {
+		color: darken($color-text-footer, 15%);
+
+		&:hover {
+			color: $color-text;
+		}
+	}
+
+	img {
+		display: block;
+		margin-top: 0.25rem;
+		filter: grayscale(100%);
+		transition: filter 0.3s ease;
+
+		&:hover {
+			filter: grayscale(0%);
+		}
+	}
+}
