@@ -1,12 +1,9 @@
 all: build
 
-rubygems:
-	bundle install --path vendor/bundle
-
 dist/assets:
 	mkdir -p dist/assets
 
-assets/sass/components/_syntax.scss: rubygems dist/assets
+assets/sass/components/_syntax.scss: dist/assets
 	bundle exec ruby bin/generate_code_css.rb
 
 build: assets/sass/components/_syntax.scss
@@ -23,4 +20,4 @@ clean:
 	rm -fr dist/* vendor/bundle .sass-cache
 
 
-.PHONY: all build clean rubygems
+.PHONY: all build clean

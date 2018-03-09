@@ -9,6 +9,7 @@ The site is built with [Zodiac](https://github.com/nuex/zodiac) (`awk`), Ruby, a
 Ensure you have a reasonably up-to-date Ruby (2.3+). As long as you have the `bundler` gem installed, you can simply run:
 
 ```
+$ bundle install
 $ make
 ```
 

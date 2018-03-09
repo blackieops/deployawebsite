@@ -4,6 +4,7 @@ pipeline {
 	stages {
 		stage("Build") {
 			steps {
+				sh "bundle install --path vendor/bundle"
 				sh "make"
 			}
 		}
