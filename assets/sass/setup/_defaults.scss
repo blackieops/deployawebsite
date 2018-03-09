@@ -28,7 +28,7 @@ code {
 pre {
 	padding: 1em;
 	line-height: 1.25em;
-	overflow: scroll;
+	overflow: auto;
 	max-height: 500px;
 
 	@media screen and (max-width: $break-tiny) {
