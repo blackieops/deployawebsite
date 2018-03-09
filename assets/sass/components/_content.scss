@@ -1,3 +1,9 @@
+.site-content-header h1 {
+	margin: 0 0 1em 0;
+	font-size: 2em;
+	line-height: 1.1em;
+}
+
 .site-content {
 	@include clearfix;
 	padding: 0 $padding-content;
@@ -6,27 +12,20 @@
 		padding: 0 $padding-content-mobile;
 	}
 
-	strong {
-		font-weight: bold;
-		font-size: 1.1em;
-	}
-
 	h1, h2, h3, h4 {
 		margin: 1.5em 0 1em;
-		font-weight: 700;
+	}
+
+	h1, h2 {
+		margin-left: -2rem;
+		padding-left: 1rem;
+		border-left: 1rem solid $color-border;
+		font-size: 1.75em;
 	}
 
 	h1 {
-		margin: 0 0 1em 0;
-		font-size: 2em;
-		line-height: 1.1em;
-	}
-
-	h2 {
-		margin-left: -2rem;
-		padding-left: 1rem;
-		border-left: 1rem solid $color-text;
-		font-size: 1.75em;
+		margin-top: 0;
+		font-size: 1.5em;
 	}
 
 	h3 {
@@ -42,5 +41,28 @@
 		margin: 1em 0;
 		padding-left: 1.5em;
 		list-style-type: square;
+
+		&.compact li {
+			margin: 0.5em 0;
+		}
+	}
+
+	.section-nav {
+		@include clearfix;
+		margin: 2em (-$padding-content) 1em (-$padding-content);
+
+		a {
+			display: inline-block;
+			padding: 1em;
+			background-color: $color-border;
+		}
+	}
+
+	.section-nav-next {
+		float: right;
+	}
+
+	.section-nav-previous {
+		float: left;
 	}
 }
