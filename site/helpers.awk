@@ -3,6 +3,7 @@
 function load_helpers() {
 	data["page_title"] = page_title()
 	data["section_title"] = section_title()
+	data["site_section_title"] = site_section_title()
 	data["next_section"] = next_section()
 	data["previous_section"] = previous_section()
 }
@@ -18,6 +19,13 @@ function page_title() {
 function section_title() {
 	if (data["article_section"]) {
 		return "<h1 class=\"site-content-subtitle\">" data["article_section"] "</h1>"
+	} else {
+		return ""
+	}
+}
+function site_section_title() {
+	if (data["article_section"]) {
+		return ": " data["article_section"]
 	} else {
 		return ""
 	}
