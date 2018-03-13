@@ -11,7 +11,7 @@ dist/assets:
 assets/sass/components/_syntax.scss: dist/assets
 	bundle exec ruby bin/generate_code_css.rb
 
-dist/assets/site.css: $(SASS)
+dist/assets/site.css: $(SASS) assets/sass/components/_syntax.scss
 	bundle exec sass \
 		-I vendor/bundle/ruby/*/gems/bourbon-*/app/assets/stylesheets/ \
 		--style compressed \
