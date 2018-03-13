@@ -1,5 +1,3 @@
-## Redirecting the Apex
-
 So now we have the main site active on `www.`, but we still need to redirect
 users that may hit our "bare domain" (often called the "apex"). Instead of
 failing to load anything, we should helpfully redirect them to `www`.

@@ -1,5 +1,3 @@
-## Setting up
-
 Now that we have a general idea of what's involved, we can get started. The
 first thing we must do is configure our provider. In this case, `aws`.
 

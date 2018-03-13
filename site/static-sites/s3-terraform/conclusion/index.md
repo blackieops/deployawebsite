@@ -1,5 +1,3 @@
-## Wrap-up
-
 You've reached the end. At this point, you should have a directory of Terraform
 suitable for reuse to deploy all the static sites you could desire.
 

@@ -1,5 +1,3 @@
-## Creating a Bucket
-
 In the [original guide][1], we had to copy around some JSON and click a bunch of
 buttons. In Terraform, we just define a single resource.
 

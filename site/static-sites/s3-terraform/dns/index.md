@@ -1,5 +1,3 @@
-## Terraforming DNS
-
 If you are satisfied manually managing your DNS records, or with a provider
 other than Amazon Route 53, then feel free to skip this section. However, if you
 wish to automate the management of DNS records for your new static site using

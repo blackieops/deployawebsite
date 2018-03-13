@@ -1,5 +1,3 @@
-## Making it Generic
-
 Terraform's power really comes into play when you genericize your resources such
 that you can apply them to as many different sites and situations as you desire,
 thereby significantly reducing the effort involved with deploying similar sites.

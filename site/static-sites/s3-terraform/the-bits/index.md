@@ -1,5 +1,3 @@
-# Terraform's Bits
-
 We won't need in-depth knowledge of Terraform for this guide, but some basics
 will greatly help in understanding.
 

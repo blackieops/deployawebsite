@@ -1,4 +1,5 @@
 article_title: to S3 and CloudFront with Terraform
+article_section: Creating a Bucket
 
 next_link: /static-sites/s3-terraform/cloudfront/
 next_text: Terraforming CloudFront

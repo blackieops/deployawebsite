@@ -1,5 +1,3 @@
-## Adding TLS
-
 At this point you should have a CloudFront distribution serving your site over a
 generated CloudFront domain -- we're nearly there! All we need to do now is
 set up TLS certificates and configure CloudFront to use our own domain.

@@ -1,5 +1,3 @@
-## Terraforming CloudFront
-
 Now that we have a bucket, we can create the CloudFront distribution to ensure
 it can handle production-level traffic. For now, we're going to be using the
 default CloudFront TLS certificate, and not adding any CNAMEs -- that will come
