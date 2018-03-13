@@ -190,8 +190,9 @@ With that said, let's get started.
 1. Navigate your way to "Certificate Manager" from the Services menu
 2. Click "Request a certificate"
 3. Add as many domains to the certificate as you need. For most websites, you'll likely only need the apex domain and the `www` subdomain version. It's worth noting that you are able to specify a wildcard subdomain if you are unsure of how many subdomains you'll need.
-4. Click "Review and request"
-5. Check your email. Amazon will send the WHOIS owner of the domain a verification email.
+4. Choose a validation method: DNS or Email. DNS is often easier. Follow the
+   instructions given for whatever method you choose.
+5. Click "Review" then "Confirm and request"
 
 Once confirmed, you should now have a valid SSL certificate for use with AWS services! This will become useful in the next section.
 

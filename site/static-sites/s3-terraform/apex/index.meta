@@ -1,0 +1,7 @@
+article_title: to S3 and CloudFront with Terraform
+
+next_link: /static-sites/s3-terraform/workspaces/
+next_text: Making it Generic
+
+previous_link: /static-sites/s3-terraform/dns/
+previous_text: Terraforming DNS

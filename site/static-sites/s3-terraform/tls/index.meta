@@ -1,0 +1,7 @@
+article_title: to S3 and CloudFront with Terraform
+
+next_link: /static-sites/s3-terraform/dns/
+next_text: Terraforming DNS
+
+previous_link: /static-sites/s3-terraform/cloudfront/
+previous_text: Terraforming CloudFront
