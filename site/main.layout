@@ -30,7 +30,7 @@
 			<footer class="site-footer">
 				<div class="legal">
 					<p>The content is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> license.</p>
-					<p><a href="https://bitbucket.org/blackieops/deployawebsite">The code</a> is under the <a href="https://bitbucket.org/blackieops/deployawebsite/src/master/LICENSE">BSD-3</a> license. Patches welcome!</p>
+					<p><a href="https://projects.blackieops.com/deployawebsite/site">The code</a> is under the BSD-3 license. Patches welcome!</p>
 				</div>
 
 				<div class="credits">
