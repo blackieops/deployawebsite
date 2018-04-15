@@ -17,7 +17,3 @@ RUN gem install bundler --no-ri --no-rdoc
 
 RUN git clone https://github.com/nuex/zodiac.git /tmp/zodiac && \
 	cd /tmp/zodiac && make install && rm -fr /tmp/zodiac
-
-# Jenkins sets the UID but some things breaks if the user isn't present in passwd
-RUN useradd -u995 jenkins
-

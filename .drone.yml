@@ -1,0 +1,22 @@
+---
+pipeline:
+  setup:
+    image: docker
+    commands:
+      - docker build --rm -t blackieops/deployawebsite .
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+
+  build:
+    image: blackieops/deployawebsite
+    commands:
+      - bundle install --path vendor/bundle
+	  - make
+
+  publish:
+    image: blackieops/deployawebsite
+    commands:
+      - aws s3 sync --delete dist/ s3://www.deployawebsite.com/
+    secrets: [ aws_access_key_id, aws_secret_access_key ]
+    when:
+      branch: master
