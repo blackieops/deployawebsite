@@ -11,7 +11,7 @@ pipeline:
     image: blackieops/deployawebsite
     commands:
       - bundle install --path vendor/bundle
-	  - make
+      - make
 
   publish:
     image: blackieops/deployawebsite
