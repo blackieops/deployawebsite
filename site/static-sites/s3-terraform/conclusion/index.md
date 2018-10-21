@@ -9,5 +9,4 @@ to check their work, or cheat.
 If you found a typo or problem in any of this guide, please contribute a patch;
 contributions and fixes are always welcome!
 
-
-[1]: https://projects.blackieops.com/deployawebsite/example-s3-terraform/
+[1]: https://github.com/blackieops/deployawebsite-example-s3-terraform/
