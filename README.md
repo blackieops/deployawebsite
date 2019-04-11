@@ -24,7 +24,7 @@ For something automatic, you could look into a solution like [inotifywait](https
 With the latter:
 
 ```
-$ find site/ assets/ | entr make
+$ find site/ | entr make
 ```
 
 ## Licenses
