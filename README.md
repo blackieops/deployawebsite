@@ -4,9 +4,9 @@ This is the source code for [deployawebsite.com](https://www.deployawebsite.com)
 
 ## Building
 
-The site is built with [Zodiac](https://github.com/nuex/zodiac) (`awk`), Ruby, and GNU Make. Zodiac builds the site content, Ruby handles the Sass, and Make ties it all together.
-
-Ensure you have a reasonably up-to-date Ruby (2.3+). As long as you have the `bundler` gem installed, you can simply run:
+The site is built with GNU Make and a couple Ruby scripts. As long as you have a
+reasonably up-to-date Ruby (2.3+), the `bundler` gem, and GNU coreutils
+installed, you can just run:
 
 ```
 $ bundle install
@@ -24,7 +24,7 @@ For something automatic, you could look into a solution like [inotifywait](https
 With the latter:
 
 ```
-$ find site/ | entr make
+$ ag -l | entr make
 ```
 
 ## Licenses

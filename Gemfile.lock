@@ -2,7 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     redcarpet (3.4.0)
-    rouge (3.0.0)
+    rouge (3.5.1)
 
 PLATFORMS
   ruby
