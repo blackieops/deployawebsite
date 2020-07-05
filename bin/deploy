@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# This website is hosted on Amazon Web Services using S3 and CloudFront.
+# This website is hosted on Azure Storage.
 #
-# We simply build the site and sync the built files to S3. SVG's are uploaded
-# separately, with custom metadata to denote their content-type, because S3
-# does not understand what an SVG is and serves it as an octet-stream.
+# We simply build the site and sync the built files to Azure using their CLI.
+# The storage account is configured to enable Static Web Hosting, and Azure CDN
+# sits in front of the account's web endpoint to distribute and cache it
+# globally.
 
-BUCKET="www.deployawebsite.com"
+ACCOUNT="deployawebsitecom"
 
-aws s3 sync --exclude '*.svg' dist/ s3://$BUCKET/
-aws s3 sync --exclude '*' --include '*.svg' --content-type 'image/svg+xml' dist/ s3://$BUCKET/
+az storage blob upload-batch --account-name "$ACCOUNT" -d '$web' -s dist
