@@ -1,8 +1,0 @@
-article_title: to S3 and CloudFront with Terraform
-article_section: Setting up
-
-next_link: /static-sites/s3-terraform/creating-bucket/
-next_text: Creating a Bucket
-
-previous_link: /static-sites/s3-terraform/the-bits/
-previous_text: Terraform's Bits

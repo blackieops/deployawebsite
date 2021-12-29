@@ -1,8 +1,0 @@
-article_title: to S3 and CloudFront with Terraform
-article_section: Making it Generic
-
-previous_link: /static-sites/s3-terraform/apex/
-previous_text: Redirecting the Apex
-
-next_link: /static-sites/s3-terraform/conclusion/
-next_text: Wrap-up
