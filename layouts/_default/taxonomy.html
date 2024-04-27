@@ -1,0 +1,14 @@
+{{ define "main" }}
+
+<h1>All <code>{{.Title }}</code> content</h1>
+
+<div class="article-list">
+	{{ range .Pages }}
+	<a class="article-card box" href="{{.Permalink }}">
+		<h2>{{.Title }}</h2>
+		<p>{{ .Params.lede }}</p>
+	</a>
+	{{ end }}
+</div>
+
+{{ end }}

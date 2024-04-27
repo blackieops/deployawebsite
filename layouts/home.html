@@ -1,0 +1,12 @@
+{{ define "main" }}
+	{{ .Content }}
+
+	<div class="article-list">
+		{{ range .Site.RegularPages }}
+			<a class="article-card box" href="{{.Permalink }}">
+				<h2>{{.Title }}</h2>
+				<p>{{ .Params.lede }}</p>
+			</a>
+		{{ end }}
+	</div>
+{{ end }}

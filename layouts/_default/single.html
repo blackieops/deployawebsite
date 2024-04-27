@@ -1,0 +1,25 @@
+{{- define "main" -}}
+<article class="article">
+	<header>
+		<h1>{{ .Title }}</h1>
+		<div class="article--meta">
+			<span class="article--meta--badge">
+				Published <time>{{ .PublishDate.Format "January 2, 2006" }}</time>
+			</span>
+
+			{{ range $tag := .Params.tags -}}
+			<a class="article--meta--badge" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/">{{ . }}</a>
+			{{- end -}}
+		</div>
+	</header>
+
+	{{ if .Params.cover }}
+	<figure class="article--cover">
+		<img class="rounded shadow" src="{{ .Params.cover.url }}" alt="{{ .Params.cover.alt }}"
+			width="{{ .Params.cover.width }}" height="{{ .Params.cover.height }}" />
+	</figure>
+	{{ end }}
+
+	<div class="prose">{{ .Content }}</div>
+</article>
+{{- end -}}

@@ -1,0 +1,17 @@
+baseURL: "/"
+defaultContentLanguage: "en"
+disableHugoGeneratorInject: true
+
+languages:
+  en:
+    weight: 0
+    title: "Deploy a Website"
+    languageCode: "en-CA"
+
+markup:
+  highlight:
+    style: gruvbox-light
+
+  goldmark:
+    renderer:
+      unsafe: true
