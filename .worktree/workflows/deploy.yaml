@@ -1,0 +1,28 @@
+---
+name: Deploy (Production)
+
+'on':
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Hugo
+        uses: https://github.com/peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.140.0'
+
+      - name: Build
+        run: hugo --minify
+
+      - name: Deploy to Worktree Sites
+        uses: worktree/deploy-site@424d14e0613e3557ac9ac9c21dc65df767d23537
+        with:
+          source: public
+          site_id: Ag5yfszzPepPZGo8wzhhdj
+          deploy_token: ${{ secrets.SITES_DEPLOY_TOKEN }}
